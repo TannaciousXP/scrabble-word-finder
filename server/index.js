@@ -1,13 +1,13 @@
-const express = reuqire('express');
+const express = require('express');
 const app = express();
 const fs = require('fs');
 
 
 
-app.get(`/lookup/:leters`, (req, res) => {
+// app.get(`/lookup/:leters`, (req, res) => {
 
-  res.setHeader('Access-Control-Allow-Origin', '*');  
-});
+//   res.setHeader('Access-Control-Allow-Origin', '*');  
+// });
 
 
 

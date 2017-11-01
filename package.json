@@ -4,7 +4,7 @@
   "description": "Generate list of words",
   "main": "index.html",
   "scripts": {
-    "start": "nodemon -watch",
+    "start": "nodemon server"
   },
   "author": "Peter X. Tan",
   "license": "ISC",
