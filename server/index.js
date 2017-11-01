@@ -19,11 +19,20 @@ app.get(`/lookup/:letters`, (req, res) => {
   console.log(chars);
   let listOfWords = [];  
   getAll(words => {
-    words = words.filter(ele => ele.length === chars.length);
+    words = words.filter(ele => ele.length <= chars.length);
     words = words.filter(word => {
-      return chars.every(char => word.includes(char.toUpperCase()));
+      let copyStr = chars.slice();
+      return word.split('').every(char => {
+        if (copyStr.indexOf(char) !== -1) {
+          copyStr.splice(copyStr.indexOf(char), 1);
+          return true;
+        } else {
+          return false;
+
+        }
+        
+      });
     });
-    console.log(words.length);
     res.setHeader('Access-Control-Allow-Origin', '*');  
     res.json(words);
   });
