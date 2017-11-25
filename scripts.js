@@ -21,12 +21,14 @@ function getlist() {
     list.innerHTML = '';
     haveList = true;
   }
-  list.innerHTML = `List of words for ${display}`;   
+  list.innerHTML = `List of words for ${display}`;  
+  console.log(display.length);
   let li;
   let wrapper = d.getElementById('wrapper');
   if (display.length <= 7) {
     let option = new Request(`http:localhost:3000/lookup/${display}`, {"method" : 'GET'});
-    fetch(option).then(data => data.json()).then(results => {          
+    fetch(option).then(data => data.json()).then(results => {     
+      console.log(results);     
       results.forEach((word) => {
         li = d.createElement('li');
         li.innerHTML = word;

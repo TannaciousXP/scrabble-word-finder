@@ -16,7 +16,6 @@ let getAll = (cb => {
 
 app.get(`/lookup/:letters`, (req, res) => {
   let chars = req.params.letters.split('');
-  console.log(chars);
   let listOfWords = [];  
   getAll(words => {
     words = words.filter(ele => ele.length <= chars.length);
